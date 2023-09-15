@@ -1,0 +1,69 @@
+apiVersion: skaffold/v2alpha3
+kind: Config
+deploy:
+  kubectl:
+    manifests:
+      - ./infra/k8s/*
+      - ./infra/k8s-dev/*
+build:
+  local:
+    push: false
+
+  artifacts:
+    - image: communiqo/nft-client-auth
+      context: auth
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: src/**/*.ts
+            dest: .
+            
+    - image: communiqo/nft-client-store
+      context: store
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: src/**/*.ts
+            dest: .
+    - image: communiqo/nft-client-expiration
+      context: expiration
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: src/**/*.ts
+            dest: .
+    - image: communiqo/nft-client-contracts
+      context: contracts
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: src/**/*.ts
+            dest: .
+    - image: communiqo/nft-client-blogs
+      context: blogs
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: src/**/*.ts
+            dest: .
+    - image: communiqo/nft-client-c2b-b2c
+      context: c2b-b2c
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: src/**/*.ts
+            dest: .
+    - image: communiqo/nft-client-c2e-e2c
+      context: c2e-e2c
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: src/**/*.ts
+            dest: .

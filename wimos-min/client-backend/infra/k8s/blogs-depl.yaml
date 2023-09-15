@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blogs-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: blogs
+  template:
+    metadata:
+      labels:
+        app: blogs
+    spec:
+      containers:
+        - name: blogs
+          image: 
+          env:
+            - name: NATS_CLUSTER_ID
+              value: 
+            - name: NATS_CLIENT_ID
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: NATS_URL
+              value: 
+            - name: MONGO_URI
+              value: 
+            - name: JWT_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secret
+                  key: JWT_KEY
+            - name: AWS_ACCESS_KEY_ID
+              valueFrom:
+                secretKeyRef:
+                  name: aws-access-key-id
+                  key: AWS_ACCESS_KEY_ID
+            - name: AWS_SECRET_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: aws-secret-access-key
+                  key: AWS_SECRET_ACCESS_KEY
+                  
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: blogs-srv
+spec:
+  selector:
+    app: blogs
+  ports:
+    - name: blogs
+      protocol: TCP
+      port: 4000
+      targetPort: 4000
+      

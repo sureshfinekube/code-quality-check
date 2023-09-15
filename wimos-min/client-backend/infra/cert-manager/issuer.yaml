@@ -1,0 +1,17 @@
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: letsencrypt-nginx
+spec:
+  acme:
+    email: 
+    server: 
+    privateKeySecretRef:
+      name: 
+    solvers:
+      - http01:
+          ingress:
+            ingressTemplate:
+              metadata:
+                annotations:
+                  kubernetes.io/ingress.class: nginx

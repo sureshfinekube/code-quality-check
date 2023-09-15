@@ -1,0 +1,7 @@
+[
+    {"id":1,"nft":"https://cdn.iconscout.com/icon/free/png-256/laptop-user-1-1179329.png", "nft_name":"Test Name1",  "created_by":"sumith", "category_name":"Photogrphy", "total_owners":2, "total_copies":1,"status":true},
+    {"id":2,"nft":"https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg", "nft_name":"Test Name2",  "created_by":"sumith", "category_name":"Photogrphy", "total_owners":0, "total_copies":2,"status":false},
+    {"id":3,"nft":"https://cdn.iconscout.com/icon/free/png-256/laptop-user-1-1179329.png", "nft_name":"Test Name3",  "created_by":"sumith", "category_name":"Memes", "total_owners":6, "total_copies":8,"status":true},
+    {"id":4,"nft":"https://cdn.iconscout.com/icon/free/png-256/laptop-user-1-1179329.png", "nft_name":"Test Name4",  "created_by":"sumith", "category_name":"Memes", "total_owners":1, "total_copies":7,"status":true},
+    {"id":5,"nft":"https://cdn.iconscout.com/icon/free/png-256/laptop-user-1-1179329.png", "nft_name":"Test Name5",  "created_by":"sumith", "category_name":"Memes", "total_owners":2, "total_copies":3,"status":true}
+]

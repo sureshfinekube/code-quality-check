@@ -1,0 +1,90 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata: 
+  name: ingress-service
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/proxy-body-size: "100m"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: 
+      http:
+        paths:
+          - path: /api/auth/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: auth-srv
+                port:
+                  number: 4000
+    - host: 
+      http:
+        paths:
+          - path: /api/store/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: 
+                port:
+                  number: 4000
+    - host: 
+      http:
+        paths:
+          - path: /api/contracts/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: 
+                port:
+                  number: 4000
+    - host:
+      http:
+        paths:
+          - path: /api/blogs/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: 
+                port:
+                  number: 4000
+    - host: 
+      http:
+        paths:
+          - path: /api/c2b-b2c/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: 
+                port:
+                  number: 4000
+    - host: 
+      http:
+        paths:
+          - path: /api/c2e-e2c/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: 
+                port:
+                  number: 4000
+    - host: 
+      http:
+        paths:
+          - path: /api/pages/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: 
+                port:
+                  number: 4000
+    - host: 
+      http:
+        paths:
+          - path: /api/payments/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: 
+                port:
+                  number: 4000

@@ -1,0 +1,120 @@
+{
+  "title": "home-01",
+  "content": [
+    {
+      "section": "hero-section",
+      "headings": [
+        {
+          "id": 1,
+          "content": "Discover Digital Art, Collect and Sell Your Specific NFTs."
+        }
+      ],
+      "texts": [
+        {
+          "id": 1,
+          "content": "Partner with one of the world's largest retailers to showcase your brand and products."
+        }
+      ],
+      "buttons": [
+        {
+          "id": 2,
+          "color": "primary-alta",
+          "content": "Create",
+          "path": "/create"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/slider/slider-1.png"
+        }
+      ]
+    },
+    {
+      "section": "service-section",
+      "section_title": {
+        "title": "Create and sell your NFTs"
+      },
+      "items": [
+        {
+          "id": 2,
+          "title": "Setup Your Wallet",
+          "path": "/collection",
+          "subtitle": "Step-01",
+          "description": "Once you’ve set up your wallet of choice, connect it to <store name> by clicking the Wallet Connect button in the top right corner.",
+          "images": [
+            {
+              "src": "/images/icons/shape-1.png"
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "title": "Create Your Collection",
+          "path": "/create_collection",
+          "subtitle": "Step-02",
+          "description": "Click the Collection menu and set up your collection. Add a name, a description, a link, logo & banner image, and choose blockchain.",
+          "images": [
+            {
+              "src": "/images/icons/shape-1.png"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Add Your NFTs",
+          "path": "/create",
+          "subtitle": "Step-03",
+          "description": "Upload your work (image), add a title and description, and customize your NFTs with properties and unlockable content.",
+          "images": [
+            {
+              "src": "/images/icons/shape-5.png"
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "title": "List NFTs For Sale",
+          "path": "/explore",
+          "subtitle": "Step-04",
+          "description": "Choose between auctions and fixed-price listings. You choose how you want to sell your NFTs, and we help you sell them!",
+          "images": [
+            {
+              "src": "/images/icons/shape-6.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section": "live-explore-section",
+      "section_title": {
+        "title": "Live Bidding"
+      }
+    },
+    {
+      "section": "newest-section",
+      "section_title": {
+        "title": "Top NFT"
+      }
+    },
+
+    {
+      "section": "top-sller-section",
+      "section_title": {
+        "title": "Top Seller in"
+      }
+    },
+    {
+      "section": "explore-product-section",
+      "section_title": {
+        "title": "Explore "
+      }
+    },
+    {
+      "section": "collection-section",
+      "section_title": {
+        "title": "Top Collection"
+      }
+    }
+  ]
+}

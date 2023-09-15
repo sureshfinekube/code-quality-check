@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: c2b-b2c-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: c2b-b2c
+  template:
+    metadata:
+      labels:
+        app: c2b-b2c
+    spec:
+      containers:
+        - name: c2b-b2c
+          image: 
+          env:
+            - name: NATS_CLUSTER_ID
+              value: 
+            - name: NATS_CLIENT_ID
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: NATS_URL
+              value: 
+            - name: MONGO_URI
+              value: 
+            - name: JWT_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secret
+                  key: JWT_KEY
+
+# service      
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: c2b-b2c-srv
+spec:
+  selector:
+    app: c2b-b2c
+  ports:
+    - name: c2b-b2c
+      protocol: TCP
+      port: 4000
+      targetPort: 4000
+      

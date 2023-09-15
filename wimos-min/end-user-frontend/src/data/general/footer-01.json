@@ -1,0 +1,115 @@
+{
+  "id": "footer-data-01",
+  "logo-widget": {
+    "logo": [
+      {
+        "src": "/images/logo/logo-white.png",
+        "alt": "logo"
+      },
+      {
+        "src": "/images/logo/logo-dark.png",
+        "alt": "logo"
+      }
+    ],
+    "text": "Created with the collaboration of over 60 of the world's best wimos Artists."
+  },
+  "newsletter-widget": {
+    "title": "Get The Latest Nuron Updates",
+    "note": "Email is safe. We don't spam."
+  },
+  "quicklink-widget": {
+    "title": "wimos",
+    "menu": [
+      {
+        "id": 1,
+        "text": "Explore",
+        "path": "/explore"
+      },
+      {
+        "id": 2,
+        "text": "Create",
+        "path": "/create"
+      },
+      {
+        "id": 3,
+        "text": "Collections",
+        "path": "/collection"
+      },
+      {
+        "id": 4,
+        "text": "Blogs",
+        "path": "/blog"
+      }
+    ]
+  },
+  "information-widget": {
+    "title": "Information",
+    "menu": [
+      {
+        "id": 1,
+        "text": "Profile",
+        "path": "/author"
+      },
+      {
+        "id": 2,
+        "text": "Edit Profile",
+        "path": "/edit-profile"
+      },
+      {
+        "id": 3,
+        "text": "My Collections",
+        "path": "/my-collections"
+      }
+    ]
+  },
+  "soldout-widget": {
+    "title": "Recent Sold Out",
+    "products": [
+      {
+        "id": 1,
+        "title": "#21 The Wonder",
+        "path": "/product",
+        "highestBid": "Highest bid 1/20",
+        "price": "0.244wETH",
+        "image": {
+          "src": "/images/portfolio/portfolio-01.jpg"
+        }
+      },
+      {
+        "id": 2,
+        "title": "Diamond Dog",
+        "path": "/product",
+        "highestBid": "Highest bid 1/20",
+        "price": "0.022wETH",
+        "image": {
+          "src": "/images/portfolio/portfolio-02.jpg"
+        }
+      },
+      {
+        "id": 3,
+        "title": "Morgan11",
+        "path": "/product",
+        "highestBid": "Highest bid 1/20",
+        "price": "0.892wETH",
+        "image": {
+          "src": "/images/portfolio/portfolio-03.jpg"
+        }
+      }
+    ]
+  },
+  "footer-link-widget": {
+    "menu": [
+      {
+        "id": 1,
+        "text": "Terms",
+        "path": "/terms-condition"
+      },
+      {
+        "id": 2,
+        "text": "Privacy Policy",
+        "path": "/privacy-policy"
+      }
+    ]
+  },
+  "copyright_text": "©2022 wimos, All rights reserved"
+}

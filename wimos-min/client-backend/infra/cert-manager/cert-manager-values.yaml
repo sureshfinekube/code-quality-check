@@ -1,0 +1,8 @@
+# STarter Kit default values for cert-manager
+
+# CRDs are required usually
+installCRDs: false
+
+# Required only if you want to manitor cert-manager activity
+prometheus:
+  enabled: false

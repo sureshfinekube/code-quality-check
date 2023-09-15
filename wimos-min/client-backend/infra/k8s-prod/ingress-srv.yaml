@@ -1,0 +1,138 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata: 
+  name: ingress-service
+  annotations:
+    cert-manager.io/issuer: letsencrypt-nginx
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/proxy-body-size: "100m"
+spec:
+  tls:
+    - hosts:
+      - 
+      secretName: letsencrypt-nginx
+  ingressClassName: nginx
+  rules:
+    - host:
+      http:
+        paths:
+          - path: /api/auth/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name:
+                port:
+                  number: 4000
+    - host: 
+      http:
+        paths:
+          - path: /api/store/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name:
+                port:
+                  number: 4000                
+    - host: 
+      http:
+        paths:
+          - path: /api/contracts/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: 
+                port:
+                  number: 4000
+    - host: 
+      http:
+        paths:
+          - path: /api/blogs/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: 
+                port:
+                  number: 4000
+    - host: 
+      http:
+        paths:
+          - path: /api/products/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: 
+                port:
+                  number: 4000
+    - host: 
+      http:
+        paths:
+          - path: /api/c2b-b2c/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: 
+                port:
+                  number: 4000
+    - host: 
+      http:
+        paths:
+          - path: /api/c2e-e2c/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: 
+                port:
+                  number: 4000
+    - host: 
+      http:
+        paths:
+          - path: /api/pages/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: 
+                port:
+                  number: 4000
+    - host: 
+      http:
+        paths:
+          - path: /api/payments/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: 
+                port:
+                  number: 4000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-proxy-protocol: '*'
+    service.beta.kubernetes.io/aws-load-balancer-name: ''
+  labels:
+    helm.sh/chart: ingress-nginx-2.0.3
+    app.kubernetes.io/name: ingress-nginx
+    app.kubernetes.io/instance: ingress-nginx
+    app.kubernetes.io/version: 0.32.0
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/component: controller
+  name: ingress-nginx-controller
+  namespace: ingress-nginx
+spec:
+  type: LoadBalancer
+  externalTrafficPolicy: Local
+  ports:
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: http
+    - name: https
+      port: 443
+      protocol: TCP
+      targetPort: https
+  selector:
+    app.kubernetes.io/name: ingress-nginx
+    app.kubernetes.io/instance: ingress-nginx
+    app.kubernetes.io/component: controller                  
